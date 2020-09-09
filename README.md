@@ -1,14 +1,13 @@
-# Livewire VueJS Support Plugin
+# Livewire Turbolinks Plugin
 
-If you are using VueJS AND Livewire on the same page, this plugin is required.
-
-Additionally, it allows you to use Vue components within your Livewire components.
+If you are using Turbolinks AND Livewire on the same page, this plugin is required.
 
 ## Livewire Version Support
+(Livewire version 1.x suports Turbolinks out of the box)
+
 Livewire Version | Vue Plugin Version
 --- | ---
-1.x | 0.2.x
-2.x | 0.3.x
+2.x | 0.1.x
 
 ## Installation
 ### CDN
@@ -17,19 +16,6 @@ Include the CDN asset after `@livewireScripts` or  `<livewire:scripts>` in your 
 ```html
     ...
     @livewireScripts
-    <script src="https://cdn.jsdelivr.net/gh/livewire/vue@v0.3.x/dist/livewire-vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"></script>
 </body>
-```
-
-### NPM
-Install the package from NPM.
-```
-npm install livewire-vue --save-dev
-```
-
-Import the package in your bundle:
-```
-import 'livewire-vue'
-// Or.
-require('livewire-vue')
 ```
