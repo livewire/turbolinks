@@ -1,2 +1,38 @@
-!function(e){"function"==typeof define&&define.amd?define(e):e()}((function(){"use strict";if(void 0===window.livewire)throw"Livewire Turbolinks Plugin: window.Livewire is undefined. Make sure @livewireScripts is placed above this script include";var e=!0;document.addEventListener("turbolinks:load",(function(){e?e=!1:window.Livewire.restart()})),document.addEventListener("turbolinks:before-cache",(function(){document.querySelectorAll("[wire\\:id]").forEach((function(e){const i=e.__livewire,n={fingerprint:i.fingerprint,serverMemo:i.serverMemo,effects:i.effects};e.setAttribute("wire:initial-data",JSON.stringify(n))}))}))}));
-//# sourceMappingURL=livewire-turbolinks.js.map
+(function (factory) {
+    typeof define === 'function' && define.amd ? define(factory) :
+    factory();
+}((function () { 'use strict';
+
+    if (typeof window.livewire === 'undefined') {
+      throw 'Livewire Turbolinks Plugin: window.Livewire is undefined. Make sure @livewireScripts is placed above this script include';
+    }
+
+    var firstTime = true;
+    document.addEventListener("turbolinks:load", function () {
+      // We only want this handler to run AFTER the first load.
+      if (firstTime) {
+        firstTime = false;
+        return;
+      }
+
+      window.Livewire.restart();
+    });
+    document.addEventListener("turbolinks:before-cache", function () {
+      document.querySelectorAll('[wire\\:id]').forEach(function (el) {
+        const component = el.__livewire;
+        const dataObject = {
+          fingerprint: component.fingerprint,
+          serverMemo: component.serverMemo,
+          effects: component.effects
+        };
+        el.setAttribute('wire:initial-data', JSON.stringify(dataObject));
+      });
+    });
+    Livewire.hook('beforePushState', state => {
+      if (!state.turbolinks) state.turbolinks = {};
+    });
+    Livewire.hook('beforeReplaceState', state => {
+      if (!state.turbolinks) state.turbolinks = {};
+    });
+
+})));
