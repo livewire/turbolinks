@@ -7,8 +7,8 @@ import commonjs from 'rollup-plugin-commonjs';
 export default {
     input: 'src/index.js',
     output: {
-        name: 'LivewireVue',
-        file: 'dist/livewire-vue.js',
+        name: 'LivewireTurbolinks',
+        file: 'dist/livewire-turbolinks.js',
         format: 'umd',
         sourcemap: true,
     },
