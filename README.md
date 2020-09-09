@@ -5,7 +5,7 @@ If you are using Turbolinks AND Livewire on the same page, this plugin is requir
 ## Livewire Version Support
 (Livewire version 1.x suports Turbolinks out of the box)
 
-Livewire Version | Vue Plugin Version
+Livewire Version | Turbolinks Plugin Version
 --- | ---
 2.x | 0.1.x
 
