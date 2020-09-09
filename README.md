@@ -13,9 +13,11 @@ Livewire Version | Turbolinks Plugin Version
 ### CDN
 Include the CDN asset after `@livewireScripts` or  `<livewire:scripts>` in your app's HTML:
 
+> Note: You MUST have the `data-turbolinks-eval="false"` added to the script tag.
+
 ```html
     ...
     @livewireScripts
-    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>
 </body>
 ```
