@@ -2,6 +2,14 @@
 
 If you are using Turbolinks AND Livewire on the same page, this plugin is required.
 
+Livewire Version 1 supported Turbolinks internally. Livewire Version 2 has removed internal support and extracted it into this plugin.
+
+The goal of this adapter is to provide full Turbolinks support in Livewire. However, because of certain features that are difficult to impossible to make work perfectly with Turbolinks and all it's configurations, we've extracted this into a seperate package with the goal of keeping Turbolinks expectations, bugs, and fixes, isolated and away from the core of Livewire.
+
+To that end, there are loose plans to add a Turbolinks-esque set of functionality to Livewire itself, but there are no immediate plans.
+
+For the forseeable future, this adapter will remain a valid option for Livewire users hoping to user Turbolinks in their apps.
+
 ## Livewire Version Support
 (Livewire version 1.x suports Turbolinks out of the box)
 
