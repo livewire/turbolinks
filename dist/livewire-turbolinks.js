@@ -8,7 +8,8 @@
     }
 
     var firstTime = true;
-    document.addEventListener("turbolinks:load", function () {
+
+    function wireTurboAfterFirstVisit() {
       // We only want this handler to run AFTER the first load.
       if (firstTime) {
         firstTime = false;
@@ -16,8 +17,9 @@
       }
 
       window.Livewire.restart();
-    });
-    document.addEventListener("turbolinks:before-cache", function () {
+    }
+
+    function wireTurboBeforeCache() {
       document.querySelectorAll('[wire\\:id]').forEach(function (el) {
         const component = el.__livewire;
         const dataObject = {
@@ -27,7 +29,12 @@
         };
         el.setAttribute('wire:initial-data', JSON.stringify(dataObject));
       });
-    });
+    }
+
+    document.addEventListener("turbo:load", wireTurboAfterFirstVisit);
+    document.addEventListener("turbo:before-cache", wireTurboBeforeCache);
+    document.addEventListener("turbolinks:load", wireTurboAfterFirstVisit);
+    document.addEventListener("turbolinks:before-cache", wireTurboBeforeCache);
     Livewire.hook('beforePushState', state => {
       if (!state.turbolinks) state.turbolinks = {};
     });
