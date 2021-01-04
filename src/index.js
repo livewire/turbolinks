@@ -1,4 +1,4 @@
-if (typeof window.livewire === 'undefined') {
+if (typeof window.Livewire === 'undefined') {
     throw 'Livewire Turbolinks Plugin: window.Livewire is undefined. Make sure @livewireScripts is placed above this script include'
 }
 
