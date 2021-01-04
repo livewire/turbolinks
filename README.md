@@ -8,7 +8,7 @@ The goal of this adapter is to provide full Turbolinks/Turbo support in Livewire
 
 To that end, there are loose plans to add a Turbolinks-esque set of functionality to Livewire itself, but there are no immediate plans.
 
-For the forseeable future, this adapter will remain a valid option for Livewire users hoping to user Turbolinks in their apps.
+For the forseeable future, this adapter will remain a valid option for Livewire users hoping to use Turbolinks in their apps.
 
 ## Livewire Version Support
 (Livewire version 1.x supports Turbolinks out of the box)
